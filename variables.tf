@@ -13,6 +13,7 @@ variable "region" {
 variable "project_name" {
   description = "Unique name for this project"
   type        = string
+  default     = "awstfcicd1"
 }
 
 variable "create_new_repo" {
@@ -30,17 +31,19 @@ variable "create_new_role" {
 variable "codepipeline_iam_role_name" {
   description = "Name of the IAM role to be used by the Codepipeline"
   type        = string
-  default     = "codepipeline-role"
+  default     = "awstfcicd1-role"
 }
 
 variable "source_repo_name" {
   description = "Source repo name of the CodeCommit repository"
   type        = string
+  default     = "awstfcicd1"
 }
 
 variable "source_repo_branch" {
   description = "Default branch in the Source repo for which CodePipeline needs to be configured"
   type        = string
+  default     = "main"
 }
 
 variable "repo_approvers_arn" {
@@ -51,6 +54,7 @@ variable "repo_approvers_arn" {
 variable "environment" {
   description = "Environment in which the script is run. Eg: dev, prod, etc"
   type        = string
+  default     = "dev"
 }
 
 variable "stage_input" {
