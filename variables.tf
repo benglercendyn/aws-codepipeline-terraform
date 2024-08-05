@@ -4,6 +4,12 @@
 #http://aws.amazon.com/agreement or other written agreement between Customer and either
 #Amazon Web Services, Inc. or Amazon Web Services EMEA SARL or both.
 
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-2"
+}
+
 variable "project_name" {
   description = "Unique name for this project"
   type        = string
