@@ -4,8 +4,8 @@ terraform {
       source = "spacelift-io/spacelift"
     }
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.8.0"
+      source = "hashicorp/aws"
+      version = ">= 4.20.1"
     }
   }
   required_version = "~> 1.3"
