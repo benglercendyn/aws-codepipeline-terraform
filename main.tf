@@ -12,10 +12,13 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       version = ">= 4.20.1"
-      region = "us-east-2"
     }
   }
   required_version = "~> 1.3"
+}
+
+provider "aws" {
+  region = "us-east-2"
 }
 
 #Module for creating a new S3 bucket for storing pipeline artifacts
