@@ -49,6 +49,7 @@ variable "source_repo_branch" {
 variable "repo_approvers_arn" {
   description = "ARN or ARN pattern for the IAM User/Role/Group that can be used for approving Pull Requests"
   type        = string
+  default     = "arn:aws:iam::865618781952:role/firefly-caa-role"
 }
 
 variable "environment" {
