@@ -62,17 +62,17 @@ variable "stage_input" {
   description = "Tags to be attached to the CodePipeline"
   type        = list(map(any))
   default = [
-    {
-      Name      = "awstfcicd1-stage"
-      Environment = "dev"
-    }
+    { name = "validate", category = "Test", owner = "AWS", provider = "CodeBuild", input_artifacts = "SourceOutput", output_artifacts = "ValidateOutput" },
+    { name = "plan", category = "Test", owner = "AWS", provider = "CodeBuild", input_artifacts = "ValidateOutput", output_artifacts = "PlanOutput" },
+    { name = "apply", category = "Build", owner = "AWS", provider = "CodeBuild", input_artifacts = "PlanOutput", output_artifacts = "ApplyOutput" },
+    { name = "destroy", category = "Build", owner = "AWS", provider = "CodeBuild", input_artifacts = "ApplyOutput", output_artifacts = "DestroyOutput" }
   ]
 }
 
 variable "build_projects" {
   description = "Tags to be attached to the CodePipeline"
   type        = list(string)
-  default = [ "awstfcicd1-build", "dev" ]
+  default = ["validate", "plan", "apply", "destroy"]
 }
 
 variable "builder_compute_type" {
