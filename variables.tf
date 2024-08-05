@@ -71,12 +71,7 @@ variable "stage_input" {
 variable "build_projects" {
   description = "Tags to be attached to the CodePipeline"
   type        = list(string)
-  default = [
-    {
-      Name      = "awstfcicd1-build"
-      Environment = "dev"
-    }
-  ]
+  default = [ "awstfcicd1-build", "dev" ]
 }
 
 variable "builder_compute_type" {
