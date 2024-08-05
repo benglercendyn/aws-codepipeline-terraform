@@ -60,19 +60,23 @@ variable "environment" {
 variable "stage_input" {
   description = "Tags to be attached to the CodePipeline"
   type        = list(map(any))
-  default = {
-    Name      = "awstfcicd1-stage"
-    Environment = "dev"
-  }
+  default = [
+    {
+      Name      = "awstfcicd1-stage"
+      Environment = "dev"
+    }
+  ]
 }
 
 variable "build_projects" {
   description = "Tags to be attached to the CodePipeline"
   type        = list(string)
-  default = {
-    Name      = "awstfcicd1-build"
-    Environment = "dev"
-  }
+  default = [
+    {
+      Name      = "awstfcicd1-build"
+      Environment = "dev"
+    }
+  ]
 }
 
 variable "builder_compute_type" {
