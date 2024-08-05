@@ -4,6 +4,19 @@
 #http://aws.amazon.com/agreement or other written agreement between Customer and either
 #Amazon Web Services, Inc. or Amazon Web Services EMEA SARL or both.
 
+terraform {
+  required_providers {
+    spacelift = {
+      source = "spacelift-io/spacelift"
+    }
+    aws = {
+      source = "hashicorp/aws"
+      version = ">= 4.20.1"
+    }
+  }
+  required_version = "~> 1.3"
+}
+
 #Module for creating a new S3 bucket for storing pipeline artifacts
 module "s3_artifacts_bucket" {
   source                = "./modules/s3"
