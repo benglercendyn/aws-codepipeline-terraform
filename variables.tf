@@ -19,7 +19,7 @@ variable "project_name" {
 variable "create_new_repo" {
   description = "Whether to create a new repository. Values are true or false. Defaulted to true always."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "create_new_role" {
